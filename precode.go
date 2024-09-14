@@ -11,7 +11,6 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-// Task ...
 type Task struct {
 	ID           string   `json:"id"`
 	Description  string   `json:"description"`
@@ -119,7 +118,7 @@ func deleteTask(w http.ResponseWriter, r *http.Request) {
 	delete(tasks, id)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	//w.Write(resp)
+
 }
 func main() {
 	r := chi.NewRouter()
